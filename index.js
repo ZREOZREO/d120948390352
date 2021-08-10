@@ -39,8 +39,8 @@ client.on('ready', ()=> {
 })
 
 client.on('message', message => {
-    const folderPath = `./DB/CHAT/${message.guild.name} - ${message.guild.id}`
-    const filePath = `./DB/CHAT/${message.guild.name} - ${message.guild.id}/${message.channel.name} - ${message.channel.id}.txt`
+    const folderPath = `./DB/CHAT/${client.guilds.cache.get(message.guild.id).name} - ${client.guilds.cache.get(message.guild.id).id}`
+    const filePath = `./DB/CHAT/${client.guilds.cache.get(message.guild.id).name} - ${client.guilds.cache.get(message.guild.id).id}/${client.channel.cache.get(message.channel.name).name} - ${client.channel.cache.get(message.channel.id).id}.txt`
     const format1 = 'YYYY년 MM월 DD일 HH시 mm분';
     const date = new Date()
     const log = `${moment(date).format(format1)} | 서버: ${message.guild.name} | 채널: ${message.channel.name} | 유저: ${message.author.tag} | 메시지: ${message.content} \r\n`
