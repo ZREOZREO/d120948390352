@@ -132,7 +132,7 @@ client.on('message', message => {
         client.commands.get(command).execute(message, args);
     }
     catch(e)
-    {
+    {   
         const Embed = new Discord.MessageEmbed()
         .setAuthor(`ERROR REPORT by ${owner}`, img)
         .setThumbnail(img)
