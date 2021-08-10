@@ -36,19 +36,6 @@ for(const file of eventFiles)
 client.on('ready', ()=> {
     console.clear()
     console.log("BOT IS STARTED \r\n")
-
-    const date = new Date()
-    const format1 = 'YYYY년 MM월 DD일 HH시 mm분';
-    const time = moment(date).format(format1)
-
-    
-
-    // setInterval(() => {
-    //     client.user.setActivity(time, {
-    //         type: "STREAMING",
-    //         url: "https://www.twitch.tv/zreo_zreo"
-    //       });
-    // }, 10000);
 })
 
 client.on('message', message => {
@@ -82,9 +69,6 @@ client.on('message', message => {
     {
         return
     }
-
-
-    
 
     if(message.content.includes("discord.gg"))
     {
@@ -135,6 +119,11 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();
 
     //================================================================
+
+    if(!message.content.startsWith(basic))
+    {
+        return;
+    }    
     
     if(!client.commands.has(command)) return;
 
