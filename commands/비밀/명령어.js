@@ -86,7 +86,7 @@ module.exports = {
             // .addField(`**>** ${prefix}위치추적`, `아이피로 위치 알아내기`)
             // .addField(`**>** ${prefix}채널삭제`, `채널을 모두 삭제하기`)
             // .addField(`**>** ${prefix}채널이름바꾸기`, `채널의 이름을 바꾸기`)
-            // .addField(`**>** ${prefix}채널테러`, `채널을 생성해 테러하기`)
+            // .addField(`**>** ${prefix}채널테러`, `채널을 생성해 테러하기`)~
             // .addField(`**>** ${prefix}올닉 <닉네임>`, `모든 사람의 닉을 바꾸기`)
             // .addField(`**>** ${prefix}올밴`, `모든 사람을 밴하기`)
             // .addField(`**>** ${prefix}올언밴`, `모든 사람을 언밴하기`)

@@ -3,7 +3,6 @@ const client = new Discord.Client();
 const {prefix, basic, color, errorcolor, owner, ownerid, img, img2, img3, img4, covidapi, hpapikey} = require("./config.json");
 const fs = require('fs');
 const fetch = require('node-fetch');
-// const mongoose = require('./DB/mongoose');
 const moment = require('moment');
 
 require('dotenv').config();
@@ -50,6 +49,13 @@ client.on('message', message => {
         return
     }
 
+    if(message.mentions.has(client.user))
+    {
+        const filePath = `./DB/REPLY.txt`
+        const reply = fs.readFile(filePath, (error, txtString) => {
+            message.channel.send(txtString.toString())
+        })
+    }
 
     if(message.guild.name == null)
     {
@@ -123,6 +129,8 @@ client.on('message', message => {
 client.on('message', message => {
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
+    const format1 = 'YYYY년 MM월 DD일 HH시 mm분';
+    const date = new Date()
 
     //================================================================
 
