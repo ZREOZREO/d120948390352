@@ -1,0 +1,6 @@
+2021년 08월 11일 22시 35분 | 서버: Hypixel API • Reborn | 채널: general | 유저: ChiefChippy2#7983 | 메시지: and abort controller? 
+2021년 08월 11일 22시 37분 | 서버: Hypixel API • Reborn | 채널: general | 유저: DragonFang#6969 | 메시지: yes idk no 
+2021년 08월 11일 22시 38분 | 서버: Hypixel API • Reborn | 채널: general | 유저: DragonFang#6969 | 메시지: i'm on 16.2 
+2021년 08월 11일 22시 38분 | 서버: Hypixel API • Reborn | 채널: general | 유저: DragonFang#6969 | 메시지: https://developer.mozilla.org/en-US/docs/Web/API/AbortController 
+2021년 08월 11일 22시 38분 | 서버: Hypixel API • Reborn | 채널: general | 유저: DragonFang#6969 | 메시지: maybe this? idk 
+2021년 08월 11일 22시 53분 | 서버: Hypixel API • Reborn | 채널: general | 유저: DragonFang#6969 | 메시지: it basically stops a web request 

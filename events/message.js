@@ -27,8 +27,19 @@ module.exports= {
         .setFooter(`${owner}`, img)
         .setTimestamp()
         .setColor(`${errorcolor}`)
-    
-    
+        
+        try
+        {
+            if(message.guild.id == '815166438020349962')
+            {
+                return;
+            }
+        }
+        catch(error)
+        {
+            return
+        }
+
         if (message.content === `${basic}`)
         {
             message.delete()
@@ -44,47 +55,5 @@ module.exports= {
                 .then(msg => {setTimeout(() => msg.delete(), 3000)})
             }
         }
-
-        // if(message.content.includes("discord.gg"))
-        // {
-    
-        //     if(message.guild.me.hasPermission("MANAGE_MESSAGES") || message.guild.me.hasPermission("ADMINISTRATOR"))
-        //     {
-        //         message.delete()
-        //     }
-    
-        //     const Embed = new Discord.MessageEmbed()
-        //     .setAuthor(`DISCORD LINK DETECTED by ${owner}`, img)
-        //     .setThumbnail(img)
-        //     .setTitle(`DISCORD LINK DETECTED!`)
-        //     .setDescription(`MESSAGE = ${message.content}`)
-        //     .setFooter(`${owner}`, img)
-        //     .setTimestamp()
-        //     .setColor(`${color}`)
-    
-        //     message.channel.send(Embed)
-        //     .then(msg => {setTimeout(() => msg.delete(), 3000)})
-            
-        // }
-
-        // if(message.content.startsWith(basic))
-        // {
-        //     try
-        //     {
-        //         const filePath = `./DB/CHAT/LOG.txt`;
-        //         const date = new Date()
-        //         var format1 = 'YYYY년 MM월 DD일 HH시 mm분';
-        
-        //         console.log(`명령어 | ${moment(date).format(format1)} | 서버: ${message.guild.name} | 채널: ${message.channel.name} | \r\n유저: ${message.author.tag} | 메시지: ${message.content} \r\n`)
-        //         const log = `명령어 | ${moment(date).format(format1)} | 서버: ${message.guild.name} | 채널: ${message.channel.name} | 유저: ${message.author.tag} | 메시지: ${message.content}`
-            
-        //         fs.open(filePath, 'a', function(){});
-        //         fs.appendFile(filePath, log, function(){});
-        //     }
-        //     catch(e)
-        //     {
-        //         return;
-        //     }
-        // }
     }
 }

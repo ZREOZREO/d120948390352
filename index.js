@@ -4,6 +4,9 @@ const {prefix, basic, color, errorcolor, owner, ownerid, img, img2, img3, img4, 
 const fs = require('fs');
 const fetch = require('node-fetch');
 const moment = require('moment');
+var rpc = require("discord-rpc")
+const client2 = new rpc.Client({ transport: 'ipc' })
+
 
 require('dotenv').config();
 
@@ -37,6 +40,24 @@ client.on('ready', ()=> {
     console.log("BOT IS STARTED \r\n")
 })
 
+client2.on('ready', () => {
+    client2.request('SET_ACTIVITY', {
+        pid: process.pid,
+        activity : {details: "ZERO IS GOD", state: "나는 제로다",
+            assets : 
+            {
+                large_image : "zero",
+                large_text : "IGN = ZREO_ZREO"
+            },
+            buttons: [
+                { label: "YOUTUBE", url: "https://www.youtube.com/channel/UCM_ca07ZyTgJmATSypwN9Og" }, 
+                { label: "DISCORD", url: "https://discord.gg/AjmWHqQyy9"}
+            ]
+        }
+    })
+})
+
+
 client.on('message', message => {
     const folderPath = `./DB/CHAT/${client.guilds.cache.get(message.guild.id).name} - ${client.guilds.cache.get(message.guild.id).id}`
     const filePath = `./DB/CHAT/${client.guilds.cache.get(message.guild.id).name} - ${client.guilds.cache.get(message.guild.id).id}/${message.channel.name} - ${message.channel.id}.txt`
@@ -46,15 +67,7 @@ client.on('message', message => {
 
     if(message.channel.type == 'dm')
     {
-        return
-    }
-
-    if(message.mentions.has(client.user))
-    {
-        const filePath = `./DB/REPLY.txt`
-        const reply = fs.readFile(filePath, (error, txtString) => {
-            message.channel.send(txtString.toString())
-        })
+        return;
     }
 
     if(message.guild.name == null)
@@ -164,5 +177,5 @@ client.on('message', message => {
 
 })
 
-
+client2.login({ clientId: "812860879427076117" });
 client.login(process.env.TOKEN)
