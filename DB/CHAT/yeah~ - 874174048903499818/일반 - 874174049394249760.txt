@@ -17,3 +17,11 @@
 2021년 08월 10일 20시 36분 | 서버: yeah~ | 채널: 일반 | 유저: 지원#2607 | 메시지: 씨 
 2021년 08월 10일 20시 36분 | 서버: yeah~ | 채널: 일반 | 유저: 지원#2607 | 메시지: 선선ㅁ네 
 2021년 08월 10일 20시 36분 | 서버: yeah~ | 채널: 일반 | 유저: !초림is-초보닷!#0604 | 메시지: ㅋㅋ 
+2021년 08월 11일 13시 44분 | 서버: yeah~ | 채널: 일반 | 유저: !초림is-초보닷!#0604 | 메시지: const Dokdo = require('dokdo')
+
+const DokdoHandler = new Dokdo(client, { aliases: ['dokdo', 'dok'], prefix: '!' }) // Using Bot Application ownerID as default for owner option.
+
+client.on('message', async message => {
+  if (message.content === 'ping') return message.channel.send('Pong') // handle commands first
+  DokdoHandler.run(message) // try !dokdo
+}) 

@@ -45,6 +45,12 @@ client.on('message', message => {
     const date = new Date()
     const log = `${moment(date).format(format1)} | 서버: ${message.guild.name} | 채널: ${message.channel.name} | 유저: ${message.author.tag} | 메시지: ${message.content} \r\n`
 
+    if(message.channel.type == 'dm')
+    {
+        return
+    }
+
+
     if(message.guild.name == null)
     {
         message.guild.name == "Unknown"
