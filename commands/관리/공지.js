@@ -4,9 +4,10 @@ const {prefix, basic, color, errorcolor, owner, ownerid, img, img2, img3, img4, 
 
 module.exports = {
     name: '공지',
-    execute(message, announcement) {
+    execute(message) {
         message.delete()
 
+        const announcement = message.content.slice(prefix.length + this.name.length + 1)
         const user = message.author
         const embed = new Discord.MessageEmbed()
         .setAuthor(`ANNOUNCE BY ${owner}`, img)
