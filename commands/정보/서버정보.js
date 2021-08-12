@@ -38,6 +38,8 @@ module.exports = {
     name: '서버정보',
     execute(message){
         message.delete()
+
+        const user = message.author
         const roles = message.guild.roles.cache.sort((a, b) => b.position - a.position).map(role => role.toString());
         const members = message.guild.members.cache;
         const channels = message.guild.channels.cache;
@@ -97,22 +99,20 @@ module.exports = {
         .setTimestamp()
         .setColor(`${color}`)
 
-
         try
         {
-            message.channel.send(Embed)
-            .then(msg => {setTimeout(() => msg.delete(), 3000)})
             user.send(Embed)
             message.channel.send(Embed3)
+            .then(msg => {setTimeout(() => msg.delete(), 3000)})
+            message.channel.send(Embed)
             .then(msg => {setTimeout(() => msg.delete(), 3000)})
         }
         catch(e)
         {
             message.channel.send(Embed2)
             .then(msg => {setTimeout(() => msg.delete(), 3000)})
+            console.error(e)
         }
-
-        
     }
 
 }
