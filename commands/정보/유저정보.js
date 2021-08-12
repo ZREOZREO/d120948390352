@@ -7,6 +7,8 @@ module.exports = {
     execute(message){
         message.delete()
 
+        const user = message.author
+
         let target = message.mentions.members.first() || message.guild.member(message.author)
         let createdAt = target.user.createdAt
         let joinedAt = target.user.joinedAt
@@ -30,14 +32,6 @@ module.exports = {
         .setTimestamp()
         .setColor(`${color}`)
 
-        const Embed3 = new Discord.MessageEmbed() 
-        .setAuthor(`ERROR REPORTED by ${owner}`, img)
-        .setThumbnail(img)
-        .setTitle(`유저를 찾을수 없습니다`)
-        .setFooter(`${owner}`, img)
-        .setTimestamp()
-        .setColor(`${errorcolor}`)
-
         const Embed4 = new Discord.MessageEmbed() 
         .setAuthor(`ERROR REPORTED by ${owner}`, img)
         .setThumbnail(img)
@@ -56,18 +50,11 @@ module.exports = {
         
         try
         {
-            if(message.author.id == owner.id)
-            {
-                message.channel.send(Embed2)
-            }
-            else
-            {
-                user.send(Embed2)
-                message.channel.send(Embed5)
-                .then(msg => {setTimeout(() => msg.delete(), 3000)})
-                message.channel.send(Embed2)
-                .then(msg => {setTimeout(() => msg.delete(), 3000)})
-            }
+            user.send(Embed2)
+            message.channel.send(Embed5)
+            .then(msg => {setTimeout(() => msg.delete(), 3000)})
+            message.channel.send(Embed2)
+            .then(msg => {setTimeout(() => msg.delete(), 3000)})
         }
         catch(e)
         {

@@ -100,18 +100,11 @@ module.exports = {
 
         try
         {
-            if(message.author.id == owner.id)
-            {
-                message.channel.send(Embed)
-            }
-            else
-            {
-                user.send(Embed)
-                message.channel.send(Embed3)
-                .then(msg => {setTimeout(() => msg.delete(), 3000)})
-                message.channel.send(Embed)
-                .then(msg => {setTimeout(() => msg.delete(), 3000)})
-            }
+            message.channel.send(Embed)
+            .then(msg => {setTimeout(() => msg.delete(), 3000)})
+            user.send(Embed)
+            message.channel.send(Embed3)
+            .then(msg => {setTimeout(() => msg.delete(), 3000)})
         }
         catch(e)
         {
