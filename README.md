@@ -12,4 +12,4 @@
 
 # 1. You need your token
 # 2. Put your token in Config file.
-# 3. Runand Enjoy
+# 3. Run and Enjoy
