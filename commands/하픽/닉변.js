@@ -58,7 +58,7 @@ module.exports = {
             .setTimestamp()
             .setColor(`${color}`)
 
-            for(length in playerNameData) { // name dividers
+            for(length in playerNameData) {
                 for(key in playerNameData[length]) {
                     if(key == 'name' && playerNameData[length].changedToAt == undefined) {
                         Embed.addField(playerNameData[length][key], '`Original Name`', true)

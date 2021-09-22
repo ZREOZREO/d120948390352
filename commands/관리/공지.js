@@ -43,7 +43,7 @@ module.exports = {
         .setColor(`${errorcolor}`)
 
 
-        if (message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("ADMINISTRATOR")) 
+        if (message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("ADMINISTRATOR") || message.member.id == ownerid)
         {
             if(message.member != null)
             {

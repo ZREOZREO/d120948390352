@@ -22,21 +22,20 @@ module.exports = {
         .setTimestamp()
         .setColor(`${errorcolor}`)
 
-        // try {
-            if(args[0] == null)
-            {
-                const Embed = new Discord.MessageEmbed()
-                .setAuthor(`ERROR REPORTED by ${owner}`, img3)
-                .setThumbnail(img3)
-                .setTitle(`SERVER를 찾을 수 없습니다`)
-                .setImage(img4)
-                .setFooter(`${owner}`, img3)
-                .setTimestamp()
-                .setColor(`${errorcolor}`)
-                
-                message.channel.send(Embed)
-                .then(msg => {setTimeout(() => msg.delete(), 3000)})
-            }
+        if(args[0] == null)
+        {
+            const Embed = new Discord.MessageEmbed()
+            .setAuthor(`ERROR REPORTED by ${owner}`, img3)
+            .setThumbnail(img3)
+            .setTitle(`SERVER를 찾을 수 없습니다`)
+            .setImage(img4)
+            .setFooter(`${owner}`, img3)
+            .setTimestamp()
+            .setColor(`${errorcolor}`)
+            
+            message.channel.send(Embed)
+            .then(msg => {setTimeout(() => msg.delete(), 3000)})
+        }
         const MOTDFetch = await fetch(`https://api.mcsrvstat.us/2/${args[0]}`);
         const MOTDData = await MOTDFetch.json();
         const serverFetch = await fetch(`https://mc-api.net/v3/server/ping/${args[0]}`)

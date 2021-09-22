@@ -18,6 +18,7 @@ module.exports = {
             .setTitle("KOREA COVID-19 STATS")
             .setDescription(json["updateTime"])
             .addFields(
+                {name: '오늘 확진자 수', value: `${json["recoveredPercentage"]}%`, inline: true },
                 {name: '국내 완치율', value: `${json["recoveredPercentage"]}%`, inline: true },
                 {name: '국내 사망률', value: `${json["deathPercentage"]}%`, inline: true },
                 {name: '국내 검사률', value: `${json["checkingPercentage"]}%`, inline: true },

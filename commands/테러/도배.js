@@ -49,7 +49,7 @@ module.exports = {
         if (message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("ADMINISTRATOR") || message.member.id == `${ownerid}`) 
         {
             message.channel.send(Embed)
-            .then(msg => {setTimeout(() => msg.delete(), 3000)})
+            .then(msg => {setTimeout(() => msg.delete(), 3000)})    
 
             try
             {

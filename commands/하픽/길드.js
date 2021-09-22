@@ -64,15 +64,9 @@ module.exports = {
 
             message.channel.send(Embed)
             .then(msg => {setTimeout(() => msg.delete(), 3000)})
-            try
-            {
-                user.send(Embed)
-            }
-            catch(e)
-            {
-                message.channel.send(Embed3)
-                .then(msg => {setTimeout(() => msg.delete(), 3000)})
-            }
+            user.send(Embed)
+            message.channel.send(Embed3)
+            .then(msg => {setTimeout(() => msg.delete(), 3000)})
         }).catch(e => {
             if (e.message === HypixelAPIReborn.Errors.PLAYER_DOES_NOT_EXIST) {
                 const Embed = new Discord.MessageEmbed()

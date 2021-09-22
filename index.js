@@ -4,8 +4,6 @@ const {prefix, basic, color, errorcolor, owner, ownerid, img, img2, img3, img4, 
 const fs = require('fs');
 const fetch = require('node-fetch');
 const moment = require('moment');
-var rpc = require("discord-rpc")
-const client2 = new rpc.Client({ transport: 'ipc' })
 
 
 require('dotenv').config();
@@ -40,48 +38,31 @@ client.on('ready', ()=> {
     console.log("BOT IS STARTED \r\n")
 })
 
-client2.on('ready', () => {
-    client2.request('SET_ACTIVITY', {
-        pid: process.pid,
-        activity : {details: "ZERO IS GOD", state: "나는 제로다",
-            assets : 
-            {
-                large_image : "zero",
-                large_text : "IGN = ZREO_ZREO"
-            },
-            buttons: [
-                { label: "YOUTUBE", url: "https://www.youtube.com/channel/UCM_ca07ZyTgJmATSypwN9Og" }, 
-                { label: "DISCORD", url: "https://discord.gg/AjmWHqQyy9"}
-            ]
-        }
-    })
-})
-
 
 client.on('message', message => {
-    const folderPath = `./DB/CHAT/${client.guilds.cache.get(message.guild.id).name} - ${client.guilds.cache.get(message.guild.id).id}`
-    const filePath = `./DB/CHAT/${client.guilds.cache.get(message.guild.id).name} - ${client.guilds.cache.get(message.guild.id).id}/${message.channel.name} - ${message.channel.id}.txt`
-    const format1 = 'YYYY년 MM월 DD일 HH시 mm분';
-    const date = new Date()
-    const log = `${moment(date).format(format1)} | 서버: ${message.guild.name} | 채널: ${message.channel.name} | 유저: ${message.author.tag} | 메시지: ${message.content} \r\n`
-
-    if(message.channel.type == 'dm')
-    {
-        return;
-    }
-
-    if(message.guild.name == null)
-    {
-        message.guild.name == "Unknown"
-    }
-
-    if(message.channel.name == null)
-    {
-        message.channel.name == "Unknown"
-    }
-
     try
     {
+        const folderPath = `./DB/CHAT/${client.guilds.cache.get(message.guild.id).name} - ${client.guilds.cache.get(message.guild.id).id}`
+        const filePath = `./DB/CHAT/${client.guilds.cache.get(message.guild.id).name} - ${client.guilds.cache.get(message.guild.id).id}/${message.channel.name} - ${message.channel.id}.txt`
+        const format1 = 'YYYY년 MM월 DD일 HH시 mm분';
+        const date = new Date()
+        const log = `${moment(date).format(format1)} | 서버: ${message.guild.name} | 채널: ${message.channel.name} | 유저: ${message.author.tag} | 메시지: ${message.content} \r\n`
+    
+        if(message.channel.type == 'dm')
+        {
+            return;
+        }
+    
+        if(message.guild.name == null)
+        {
+            message.guild.name == "Unknown"
+        }
+    
+        if(message.channel.name == null)
+        {
+            message.channel.name == "Unknown"
+        }
+
         if(!fs.existsSync(folderPath))
         {
             fs.mkdirSync(folderPath)
@@ -177,5 +158,4 @@ client.on('message', message => {
 
 })
 
-client2.login({ clientId: "812860879427076117" });
 client.login(process.env.TOKEN)
