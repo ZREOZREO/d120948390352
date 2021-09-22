@@ -13,15 +13,6 @@ module.exports = {
     async execute(message, args){
         message.delete()
 
-        const user = message.author
-        const Embed3 = new Discord.MessageEmbed() 
-        .setAuthor(`ERROR REPORTED by ${owner}`, img)
-        .setThumbnail(img)
-        .setTitle(`특정 유저에게 메시지를 보낼 수 없습니다`)
-        .setFooter(`${owner}`, img)
-        .setTimestamp()
-        .setColor(`${errorcolor}`)
-
         if(args[0] == null)
         {
             const Embed = new Discord.MessageEmbed()
