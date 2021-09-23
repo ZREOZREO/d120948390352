@@ -3,7 +3,6 @@ const client = new Discord.Client();
 const {prefix, basic, color, errorcolor, owner, ownerid, img, img2, covidapi} = require("../config.json");
 const fs = require('fs');
 const fetch = require('node-fetch');
-const mongoose = require('../DB/mongoose');
 
 module.exports= {
     name: 'message',
