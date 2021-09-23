@@ -6,8 +6,6 @@ const fetch = require('node-fetch');
 const moment = require('moment');
 
 
-require('dotenv').config();
-
 client.commands = new Discord.Collection();
 
 const commandFolders = fs.readdirSync('./commands');
