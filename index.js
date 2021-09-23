@@ -74,27 +74,25 @@ client.on('message', message => {
         return
     }
 
-    if(message.content.includes("discord.gg"))
-    {
+    // if(message.content.includes("discord.gg"))
+    // {
+    //     if(message.guild.me.hasPermission("MANAGE_MESSAGES") || message.guild.me.hasPermission("ADMINISTRATOR"))
+    //     {
+    //         message.delete()
+    //     }
 
-        if(message.guild.me.hasPermission("MANAGE_MESSAGES") || message.guild.me.hasPermission("ADMINISTRATOR"))
-        {
-            message.delete()
-        }
+    //     const Embed = new Discord.MessageEmbed()
+    //     .setAuthor(`DISCORD LINK DETECTED by ${owner}`, img)
+    //     .setThumbnail(img)
+    //     .setTitle(`DISCORD LINK DETECTED!`)
+    //     .setDescription(`MESSAGE = ${message.content}`)
+    //     .setFooter(`${owner}`, img)
+    //     .setTimestamp()
+    //     .setColor(`${color}`)
 
-        const Embed = new Discord.MessageEmbed()
-        .setAuthor(`DISCORD LINK DETECTED by ${owner}`, img)
-        .setThumbnail(img)
-        .setTitle(`DISCORD LINK DETECTED!`)
-        .setDescription(`MESSAGE = ${message.content}`)
-        .setFooter(`${owner}`, img)
-        .setTimestamp()
-        .setColor(`${color}`)
-
-        message.channel.send(Embed)
-        .then(msg => {setTimeout(() => msg.delete(), 3000)})
-        
-    }
+    //     message.channel.send(Embed)
+    //     .then(msg => {setTimeout(() => msg.delete(), 3000)})
+    // }
 
     if(message.content.startsWith(basic))
     {
