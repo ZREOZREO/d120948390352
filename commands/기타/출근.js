@@ -16,7 +16,6 @@ module.exports = {
 
         if (!message.member.hasPermission("ADMINISTRATOR")) { return; }
 
-        const channel = client.channels.cache.find(channel => channel.id == channelid)
-        channel.send(Embed)
+        client.channels.cache.get(channelid).send(Embed);
     }
 }
