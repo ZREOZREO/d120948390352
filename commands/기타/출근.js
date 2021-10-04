@@ -15,7 +15,9 @@ module.exports = {
             .setColor(`${color}`)
 
         if (!message.member.hasPermission("ADMINISTRATOR")) { return; }
+        if (!message.guild.id == "886209797693784114") { return; }
 
-        client.channels.cache.get(channelid).send(Embed);
+        const channel = client.channels.cache.get(channelid)
+        channel.send(Embed);
     }
 }
