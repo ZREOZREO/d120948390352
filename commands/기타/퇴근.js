@@ -1,6 +1,6 @@
 const Discord = require('discord.js-selfbot');
 const client = new Discord.Client();
-const { prefix, basic, color, errorcolor, owner, ownerid, img, img2, img3, img4, covidapi, hpapikey } = require("../../config.json");
+const { prefix, basic, color, errorcolor, owner, ownerid, img, img2, img3, img4, covidapi, hpapikey, channelid } = require("../../config.json");
 
 module.exports = {
     name: '퇴근',
@@ -16,8 +16,7 @@ module.exports = {
 
         if (!message.member.hasPermission("ADMINISTRATOR")) { return; }
 
-        client.channels.get("894058960414470224").send(Embed)
-
-
+        const channel = client.channels.cache.find(channel => channel.id == channelid)
+        channel.send(Embed)
     }
 }
